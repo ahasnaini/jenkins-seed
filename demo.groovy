@@ -3,7 +3,7 @@ multibranchPipelineJob('Demo-Multibranch') {
             github {
                 repoOwner('ahasnaini')
                 repository('gokubedemo')
-                scanCredentialsId('9b803686-2f39-4a23-8f47-cb6428f69e1e')
+                credentialsId('github-ahasnaini')
                 excludes('tags/*')
             }
 
