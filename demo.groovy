@@ -1,9 +1,8 @@
 multibranchPipelineJob('Demo-Multibranch') {
         branchSources {
-            github {
-                repoOwner('ahasnaini')
-                repository('gokubedemo')
-                scanCredentialsId('9b803686-2f39-4a23-8f47-cb6428f69e1e')
+            git {
+                remote('https://github.com/ahasnaini/gokubedemo')
+                credentialsId('github-ahasnaini')
                 excludes('tags/*')
             }
 
