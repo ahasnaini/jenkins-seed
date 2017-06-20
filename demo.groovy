@@ -1,4 +1,6 @@
-multibranchPipelineJob('Demo-Multibranch') {
+folder('GoKubeDemo')
+
+multibranchPipelineJob('GoKubeDemo/Demo-Multibranch') {
         branchSources {
             git {
                 remote('https://github.com/ahasnaini/gokubedemo')
