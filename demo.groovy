@@ -1,12 +1,9 @@
 folder('GoKubeDemo')
 
-multibranchPipelineJob('GoKubeDemo/Demo-Multibranch') {
-        branchSources {
-            git {
-                remote('https://github.com/ahasnaini/gokubedemo')
-                credentialsId('github-ahasnaini')
-                excludes('tags/*')
-            }
+job('GoKubeDemo/Demo-Multibranch') {
+         scm {
+        github('ahasnaini/gokubedemo', 'development')
+    }
 
             orphanedItemStrategy {
                 discardOldItems {
