@@ -5,3 +5,8 @@ job('GoKubeDemo/Development') {
             github('ahasnaini/gokubedemo', 'development')
              }
   }
+job('GoKubeDemo/Master') {
+         scm {
+            github('ahasnaini/gokubedemo', 'master')
+             }
+  }
