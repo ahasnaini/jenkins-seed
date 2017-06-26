@@ -1,6 +1,6 @@
 folder('GoKubeDemo')
 
-job('GoKubeDemo/Demo-Multibranch') {
+job('GoKubeDemo/Development') {
          scm {
             github('ahasnaini/gokubedemo', 'development')
              }
