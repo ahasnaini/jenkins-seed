@@ -2,8 +2,8 @@ folder('GoKubeDemo')
 
 job('GoKubeDemo/Demo-Multibranch') {
          scm {
-        github('ahasnaini/gokubedemo', 'development')
-    }
+            github('ahasnaini/gokubedemo', 'development')
+             }
 
             orphanedItemStrategy {
                 discardOldItems {
@@ -15,5 +15,4 @@ job('GoKubeDemo/Demo-Multibranch') {
                 // run once a day if not otherwise run
                 periodic(1440)
             }
-        }
-    }
+  }
