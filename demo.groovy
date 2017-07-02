@@ -1,12 +1,22 @@
 folder('GoKubeDemo')
 
 pipelineJob('GoKubeDemo/Development') {
-         scm {
-            github('ahasnaini/gokubedemo', 'development')
-             }
+         definition {
+        cpsScm {
+            scm {
+              git('https://github.com/ahasnaini/gokubedemo.git','development')
+            }
+            scriptPath('Jenkinsfile')
+        }
+    }
   }
 pipelineJob('GoKubeDemo/Master') {
-         scm {
-            github('ahasnaini/gokubedemo', 'master')
-             }
+         definition {
+        cpsScm {
+            scm {
+              git('https://github.com/ahasnaini/gokubedemo.git','master')
+            }
+            scriptPath('Jenkinsfile')
+        }
+    }
   }
