@@ -1,11 +1,11 @@
 folder('GoKubeDemo')
 
-job('GoKubeDemo/Development') {
+pipelineJob('GoKubeDemo/Development') {
          scm {
             github('ahasnaini/gokubedemo', 'development')
              }
   }
-job('GoKubeDemo/Master') {
+pipelineJob('GoKubeDemo/Master') {
          scm {
             github('ahasnaini/gokubedemo', 'master')
              }
