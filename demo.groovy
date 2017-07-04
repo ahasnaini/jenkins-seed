@@ -5,7 +5,7 @@ job('GoKubeDemo/Deploy') {
      stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
    }
     steps {
-        
+        shell('echo $IMAGE_TO_DEPLOY')
         shell('Deployed to production!')
     }
 }
