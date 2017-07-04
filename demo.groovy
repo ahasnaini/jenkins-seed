@@ -6,7 +6,7 @@ job('GoKubeDemo/Deploy') {
    }
     steps {
         shell('echo $IMAGE_TO_DEPLOY')
-        shell('Deployed to production!')
+        shell('echo "Deployed to production!"')
     }
 }
 
