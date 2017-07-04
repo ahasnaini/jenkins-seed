@@ -1,7 +1,11 @@
 folder('GoKubeDemo')
 
 job('GoKubeDemo/Deploy') {
+    parameters {
+     stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
+   }
     steps {
+        
         shell('Deployed to production!')
     }
 }
