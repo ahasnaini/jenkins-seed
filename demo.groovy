@@ -1,4 +1,12 @@
-multibranchPipelineJob('GoKubeDemo') {
+folder('GoKubeDemo')
+
+job('GoKubeDemo/Deploy') {
+    steps {
+        shell('Deployed to production!')
+    }
+}
+
+multibranchPipelineJob('GoKubeDemo/Branches') {
         branchSources {
             github {
                 repoOwner('ahasnaini')
