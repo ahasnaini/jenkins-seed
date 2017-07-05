@@ -13,6 +13,15 @@ job('GoKubeDemo/Deploy') {
     }
 }
 
+job('GoKubeDemo/PrepareDeploy') {
+    publishers {
+        buildPipelineTrigger('GoKubeDemo/Deploy') {
+            parameters {
+                        currentBuild()
+            }
+        }
+    }
+
 pipelineJob('GoKubeDemo/Development') {
          definition {
         cpsScm {
