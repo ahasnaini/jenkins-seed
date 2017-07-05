@@ -14,10 +14,14 @@ job('GoKubeDemo/Deploy') {
 }
 
 job('GoKubeDemo/PrepareDeploy') {
+     parameters {
+                        stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
+
+            }
     publishers {
         buildPipelineTrigger('GoKubeDemo/Deploy') {
             parameters {
-                        stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
+
                         currentBuild()
             }
             }
