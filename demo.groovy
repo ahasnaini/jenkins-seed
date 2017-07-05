@@ -17,6 +17,7 @@ job('GoKubeDemo/PrepareDeploy') {
     publishers {
         buildPipelineTrigger('GoKubeDemo/Deploy') {
             parameters {
+                        stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
                         currentBuild()
             }
             }
