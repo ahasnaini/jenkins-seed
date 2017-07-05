@@ -10,24 +10,23 @@ job('GoKubeDemo/Deploy') {
     }
 }
 
-multibranchPipelineJob('GoKubeDemo/Branches') {
-        branchSources {
-            github {
-                repoOwner('ahasnaini')
-                repository('gokubedemo')
-                scanCredentialsId('9b803686-2f39-4a23-8f47-cb6428f69e1e')
-                excludes('tags/*')
+pipelineJob('GoKubeDemo/Development') {
+         definition {
+        cpsScm {
+            scm {
+                     git('https://github.com/ahasnaini/gokubedemo.git','development',{node -> node / 'extensions' << '' })
             }
-
-            orphanedItemStrategy {
-                discardOldItems {
-                    numToKeep(5)
-                }
-            }
-
-            triggers {
-                // run once a day if not otherwise run
-                periodic(1440)
-            }
+            scriptPath('Jenkinsfile')
         }
     }
+  }
+pipelineJob('GoKubeDemo/Master') {
+         definition {
+        cpsScm {
+            scm {
+              git('https://github.com/ahasnaini/gokubedemo.git','master',{node -> node / 'extensions' << '' })
+            }
+            scriptPath('Jenkinsfile')
+        }
+    }
+  }
