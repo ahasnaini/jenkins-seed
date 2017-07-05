@@ -4,6 +4,9 @@ job('GoKubeDemo/Deploy') {
     parameters {
      stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
    }
+    wrappers {
+        buildName('#${IMAGE_TO_DEPLOY}')
+    }
     steps {
         shell('echo $IMAGE_TO_DEPLOY')
         shell('echo "Deployed to production!"')
