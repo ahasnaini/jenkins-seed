@@ -19,6 +19,7 @@ job('GoKubeDemo/PrepareDeploy') {
             parameters {
                         currentBuild()
             }
+            }
         }
     }
 
