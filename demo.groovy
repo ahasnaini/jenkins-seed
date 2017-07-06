@@ -2,7 +2,6 @@ folder('GoKubeDemo')
 
 deliveryPipelineView('GoKubeDemo/Production') {
     pipelineInstances(5)
-    showAggregatedPipeline()
     columns(2)
     sorting(Sorting.TITLE)
     updateInterval(2)
