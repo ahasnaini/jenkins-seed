@@ -23,6 +23,11 @@ buildPipelineView('GoKubeDemo/Prod') {
 }
 
 job('GoKubeDemo/Deploy') {
+     properties {
+        rebuild {
+            autoRebuild()
+        }
+    }
     parameters {
      stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
    }
