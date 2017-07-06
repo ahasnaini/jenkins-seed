@@ -14,6 +14,15 @@ deliveryPipelineView('GoKubeDemo/Production') {
     }
 }
 
+buildPipelineView('GoKubeDemo/Prod') {
+    title('Prod')
+    displayedBuilds(5)
+    selectedJob('GoKubeDemo/PrepareDeploy')
+    alwaysAllowManualTrigger()
+    showPipelineParameters()
+    refreshFrequency(2)
+}
+
 job('GoKubeDemo/Deploy') {
     parameters {
      stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
