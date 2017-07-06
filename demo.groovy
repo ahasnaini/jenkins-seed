@@ -7,9 +7,12 @@ deliveryPipelineView('GoKubeDemo/Development') {
     sorting(Sorting.TITLE)
     updateInterval(60)
     enableManualTriggers()
+    showAvatars()
     showChangeLog()
     pipelines {
-        component('GoKubeDemo/Development')
+        component('Sub System A', 'compile-a')
+        component('Sub System B', 'compile-b')
+        regex(/compile-subsystem-(.*)/)
     }
 }
 
