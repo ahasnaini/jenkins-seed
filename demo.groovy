@@ -1,5 +1,18 @@
 folder('GoKubeDemo')
 
+deliveryPipelineView('GoKubeDemo/Development') {
+    pipelineInstances(5)
+    showAggregatedPipeline()
+    columns(2)
+    sorting(Sorting.TITLE)
+    updateInterval(60)
+    enableManualTriggers()
+    showChangeLog()
+    pipelines {
+        component('GoKubeDemo/Development')
+    }
+}
+
 job('GoKubeDemo/Deploy') {
     parameters {
      stringParam('IMAGE_TO_DEPLOY', 'NOIMAGEPASSED') 
