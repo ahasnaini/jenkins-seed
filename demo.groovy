@@ -24,6 +24,9 @@ buildPipelineView('GoKubeDemo/Prod') {
 
 job('GoKubeDemo/Deploy') {
     label('master')
+    scm {
+        github('ahasnaini/gokubedemo', 'master')
+    }
      properties {
         rebuild {
             autoRebuild()
