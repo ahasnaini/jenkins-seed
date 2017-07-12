@@ -23,9 +23,7 @@ buildPipelineView('GoKubeDemo/Prod') {
 }
 
 job('GoKubeDemo/Deploy') {
-    triggers {
-        urlTrigger {
-            restrictToLabel('master')}}
+    label('master')
      properties {
         rebuild {
             autoRebuild()
