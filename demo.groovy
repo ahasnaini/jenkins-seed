@@ -37,6 +37,8 @@ job('GoKubeDemo/Deploy') {
     steps {
         shell('echo $IMAGE_TO_DEPLOY')
         shell('echo "Deployed to production!"')
+        shell('kubectl --context=prod.kubernetes.asadali.net apply f deployment.yml')
+        shell('kubectl --context=prod.kubernetes.asadali.net set image deployment/demoappdeployment demoapp=asadali/gokubedemo:$IMAGE_TO_DEPLOY')
     }
 }
 
